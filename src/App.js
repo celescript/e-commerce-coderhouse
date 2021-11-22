@@ -1,14 +1,11 @@
 
-import './App.css';
 import NavBar from './components/NavBar/NavBar.js'
+import './App.css';
 
 //JSX
 function App() {
   return (
     <div className='App'>
-      <p>
-        Hola Mundo
-      </p>
       <NavBar></NavBar>
     </div>
   );

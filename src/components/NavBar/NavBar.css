@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    background: #0f0e17;
+  }
+  
+  .container-logo {
+    width: 3em;
+    display: flex;
+    margin-left: 0.5rem;
+  }
+  
+  .container-logo img {
+    width: 100%;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin-right: 1.5em;
+  }
+  
+  nav ul li {
+    margin: 0.2em;
+  }
+
+nav ul li > .button {
+    color: #fffffe;
+  }
+  
+ 
+  
