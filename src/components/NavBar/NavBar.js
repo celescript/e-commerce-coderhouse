@@ -7,8 +7,10 @@ import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 
+import CartWidget from '../CartWidget/CartWidget';
 
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+
 
 
 
@@ -46,8 +48,8 @@ export default function NavBar() {
           </ButtonGroup>
         </ul>
         
-      
-          <ShoppingCartIcon />
+        <CartWidget />
+          
       </nav>
     </AppBar>
   );
