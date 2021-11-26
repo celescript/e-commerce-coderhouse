@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,7 +13,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1.5rem;
-    background: #0f0e17;
+    /* background: #0f0e17; */
   }
   
   .container-logo {
@@ -19,9 +21,27 @@
     display: flex;
     margin-left: 0.5rem;
   }
+
+  .container-logo h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    color: #0d0d0d;
+  }
   
   .container-logo img {
     width: 100%;
+    margin-left: -0.7em;
+    margin-bottom: 0.4em;
+    animation: rotation 2s infinite linear;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
   }
   
   nav ul {
@@ -34,9 +54,7 @@
     margin: 0.2em;
   }
 
-nav ul li > .button {
-    color: #fffffe;
-  }
+
   
  
   

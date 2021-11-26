@@ -1,9 +1,16 @@
-import React from 'react' //este paso se puede obviar porque ya no es necesario
+
 import './NavBar.css'
-import logo from '../../cat.png';
+
+import logo from '../../assets/shuriken.svg';
+
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
+
+
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
+
 
 
 export default function NavBar() {
@@ -11,27 +18,36 @@ export default function NavBar() {
     <AppBar position="static">
       <nav>
         <div className="container-logo">
-          <img src={logo} alt="cat logo" />
+          
+          <h1>
+            TEND</h1>
+            <img src={logo} alt="tendo shuriken logo" />
+
+          
         </div>
+
+        
         <ul>
-          <ButtonGroup variant="text" aria-label="text button group">
+          <ButtonGroup aria-label="text button group">
             <li>
-              <Button className="button">Home</Button>
+              <Button variant='contained' color='secondary'>Home</Button>
             </li>
 
             <li>
-              <Button className="button">Products</Button>
+              <Button variant='contained' color='secondary'>Products</Button>
             </li>
 
             <li>
-              <Button className="button">Contact</Button>
+              <Button variant='contained' color='secondary'>Contact</Button>
             </li>
-
             <li>
-              <Button className="button">About</Button>
+              <Button  variant='contained' color='secondary'>About</Button>
             </li>
           </ButtonGroup>
         </ul>
+        
+      
+          <ShoppingCartIcon />
       </nav>
     </AppBar>
   );
