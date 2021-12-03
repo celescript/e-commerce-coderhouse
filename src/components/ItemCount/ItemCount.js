@@ -1,45 +1,49 @@
-import { CardContent, CardActions, Button, ButtonGroup, Divider } from "@mui/material";
+import { Button} from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import Card from "@mui/material/Card";
 import { useState } from "react";
-
+import './ItemCount.css'
 
 export default function ItemCount({stock}) {
+    
     const [item, setItemCount] = useState(0)
+    const [stockNow, updateStock] = useState(stock)
 
     const sumaItem = () => {
-        item <= stock && setItemCount(item + 1)
+        item <= stock && setItemCount(item + 1) 
     }
 
     const restaItem = () => {
         item > 0 && setItemCount(item - 1) 
-        } 
+    } 
+
+    const handleClick = () => {
+        updateStock(stock = stockNow - item)
+    }
+   
 
     
 
     return(
-
-        <Card className='card__container' align='center' style={{background: '#eee'}} >
-            <CardContent>
-                <h2> Remera </h2>
-            </CardContent>
-            <Divider variant="middle" />
-            <ButtonGroup orientation='vertical'>
-            <CardActions>
-                <ButtonGroup variant="contained">
-                    
-                    <Button 
-                    disabled={item === 0} onClick={restaItem} ><RemoveIcon /></Button>
-                    <span style={{padding: '0.4em 3em', background: 'white'}}> {item} </span>
-                    <Button disabled={item >= stock}  onClick={sumaItem}><AddIcon /></Button>
-                    
-                </ButtonGroup>
+         <>   
+            <div className='all-buttons'>
+                <div className='button-container'>
+                    <Button disabled={item <= 0} onClick={restaItem} ><RemoveIcon /></Button>       <span style={{padding: '0.4em 3em', background: 'white'}}> {item} </span><Button disabled={item >= stockNow}  onClick={sumaItem}><AddIcon /></Button>
+                            
+        
+                </div>
+                <Button className='cart-button' onClick={handleClick} disabled={item === 0 || stockNow <= 0} variant="outlined" style={{margin: '0 auto', background: 'white'}}> ADD TO CART </Button>
                 
-            </CardActions>
-            <CardActions ><Button disabled={item === 0} variant="outlined" style={{margin: '0 auto', background: 'white'}}> Agregar al carrito </Button></CardActions>
-            </ButtonGroup>
-        </Card>
+            </div>
+
+
+            <span className='stock-products'>
+                { 
+                (stockNow <= 0) ? <p> OUT OF STOCK</p> : <p>Available stock: {stockNow}</p>
+                }
+            </span>
+    
+        </>     
     )
 
 }

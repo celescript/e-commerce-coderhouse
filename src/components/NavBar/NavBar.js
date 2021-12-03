@@ -1,17 +1,13 @@
 
 import './NavBar.css'
 
-import logo from '../../assets/shuriken.svg';
+import logo from '../../assets/shuriken.svg'
 
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 
-import CartWidget from '../CartWidget/CartWidget';
-
-
-
-
+import { Cart3 } from 'react-bootstrap-icons';
 
 
 
@@ -48,7 +44,7 @@ export default function NavBar() {
           </ButtonGroup>
         </ul>
         
-        <CartWidget />
+        <Cart3 className='cart-icon' size={15} />
           
       </nav>
     </AppBar>

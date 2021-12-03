@@ -1,0 +1,36 @@
+
+
+.all-buttons{
+    padding: 0.5rem;
+}
+
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    
+    
+}
+
+Button{
+    width: 200px;
+}
+
+.stock-products{
+    display: flex;
+    align-items: baseline;
+}
+
+.stock-products p{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: grey;
+}
+
+
+
+
+
+
