@@ -8,6 +8,11 @@
     box-shadow: 0 10px 20px #0006;
 }
 
+.item-img{
+    height: 160px;
+    overflow: hidden;
+}
+
 .item-container:hover{
     transform: scale(1.08);
 }
