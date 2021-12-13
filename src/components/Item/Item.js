@@ -1,5 +1,4 @@
 
-import { Divider } from "@mui/material";
 import ItemCount from '../ItemCount/ItemCount';
 import './Item..css'
 
@@ -7,30 +6,23 @@ import './Item..css'
 
 
 
+
 const Item = ({data}) => {
-    const { title, description, price, stock, img } = data
-    
+    const { title, description, price, image} = data
+
     return(
     <div className= 'item-container'>
             <div className='item-img'>
-                <img width='249px' alt={description} src={`../../assets/${img}`} />
+                <img width='249px' alt={description} src={image} />
             </div>
 
-            <div className='item-text-container'>
-                <div className='item-name'>
+            
+            <div className='item-name'>
                     <h1> {title}</h1>
+
                     <h2>${price}</h2>
-                </div>
-
-                <Divider variant="middle" />
-
-                <div className='item-buttons'>
-                    {/* ITEM COUNT */}
-                    <ItemCount stock={stock} />
-                </div>
-
             </div>
-    
+
     </div>)
 }
 
