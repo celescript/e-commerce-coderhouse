@@ -3,6 +3,8 @@ import { CircularProgress} from "@mui/material"
 import Item from '../Item/Item'
 import './ItemList.css'
 
+import {Link} from 'react-router-dom'
+
 
 const ItemList = ({datos, loader}) => {
 
@@ -12,9 +14,9 @@ const ItemList = ({datos, loader}) => {
         <div className='item'>
             {datos.map( product => {
                 return (
-                    
+                       <Link className='link' to={`/product/${product.id}`}> 
                         <Item key={product.id} data={product} />
-                    
+                        </Link>
                     
                 )
             }

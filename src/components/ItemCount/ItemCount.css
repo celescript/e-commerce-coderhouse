@@ -2,24 +2,28 @@
 
 .all-buttons{
     padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    justify-content: space-evenly;
+
+}
+.counter-p{
+    font-size: 1.3rem;
 }
 
 
 .button-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 0.5rem;
-    
+    align-items: center;
     
 }
 
-Button{
-    width: 200px;
-}
 
 .stock-products{
     display: flex;
-    align-items: baseline;
 }
 
 .stock-products p{

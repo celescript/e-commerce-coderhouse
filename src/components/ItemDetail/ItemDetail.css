@@ -1,0 +1,40 @@
+.itemdetail-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding-top: 3rem;
+
+}
+img{
+    max-height: fit-content;
+}
+
+.img-container{
+    display: flex;
+    width: 70%;
+    max-height: 70vh;
+    align-content: center;
+    justify-content: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+
+}
+
+.text-container{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding-right: 3rem;
+    
+}
+
+.h1-detail{
+    text-transform: uppercase;
+    
+}
+
+.h2-detail{
+    font-size: 2.2rem;
+    padding: 2rem 0;
+}

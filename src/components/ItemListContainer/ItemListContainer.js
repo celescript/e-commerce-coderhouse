@@ -13,7 +13,6 @@ const ItemListContainer = () => {
         .then((res) => setData(res))
         .finally(() => {
             setLoading(false)
-            console.table(data)
         })
     }, [])
 

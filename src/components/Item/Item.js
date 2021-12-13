@@ -1,10 +1,5 @@
 
-import ItemCount from '../ItemCount/ItemCount';
 import './Item..css'
-
-
-
-
 
 
 const Item = ({data}) => {

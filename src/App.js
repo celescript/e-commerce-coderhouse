@@ -1,6 +1,7 @@
 
 import NavBar from './components/NavBar/NavBar.js'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
+
+import {Outlet } from 'react-router-dom'
 
 
 
@@ -11,7 +12,9 @@ function App() {
       <div className='App'>
         <NavBar/>
         
-        <ItemListContainer/>
+         
+          <Outlet/>
+        
         
       </div>
 
