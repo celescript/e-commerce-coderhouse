@@ -2,7 +2,7 @@ import React from 'react'
 import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer';
 import { useParams } from 'react-router-dom'
 
-const Detail = () => {
+const Item = () => {
     const params = useParams()
 
     return (
@@ -12,4 +12,4 @@ const Detail = () => {
     )
 }
 
-export default Detail
+export default Item

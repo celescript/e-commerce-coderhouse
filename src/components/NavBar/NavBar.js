@@ -17,15 +17,15 @@ export default function NavBar() {
   return (
     <AppBar position="static">
       <nav>
-        <div className="container-logo">
-          
-          <h1>
-            TEND</h1>
-            <img src={logo} alt="tendo shuriken logo" />
-
-          
-        </div>
-
+      <Link className='link' to='/'>
+          <div className="container-logo">
+                <h1>
+                  TEND</h1>
+                  <img src={logo} alt="tendo shuriken logo" />
+            
+            
+          </div>
+        </Link>
         
         <ul>
           <ButtonGroup aria-label="text button group">
