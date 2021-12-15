@@ -9,7 +9,7 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 
 import { Cart3 } from 'react-bootstrap-icons';
 
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 
 
@@ -30,26 +30,28 @@ export default function NavBar() {
         <ul>
           <ButtonGroup aria-label="text button group">
             <li>
-              <Link className='link' to='/'>
+              <NavLink className='link' to='/'
+              end={true}
+              activeClassName='active'>
                 <Button variant='contained' color='secondary'>Home</Button>
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-               <Link className='link' to="/Products">
+               <NavLink className='link' to="/category/all">
                 <Button variant='contained' color='secondary'>Products</Button>
-              </Link>
+              </NavLink>
             </li>
 
             <li>
-              <Link className='link' to="/Contact">
+              <NavLink className='link' to="/Contact">
                 <Button variant='contained' color='secondary'>Contact</Button>
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className='link' to="/About">
+              <NavLink className='link' to="/About">
                 <Button  variant='contained' color='secondary'>About</Button>
-              </Link>
+              </NavLink>
             </li>
           </ButtonGroup>
         </ul>

@@ -42,6 +42,10 @@
       transform: rotate(359deg);
     }
   }
+
+  .active > *{
+    color:brown;
+  }
   
   nav ul {
     display: flex;

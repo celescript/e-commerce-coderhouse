@@ -7,8 +7,6 @@ import './ItemDetail.css'
 const ItemDetail = ({datos}) => {
 
     const {title, description, price, image} = datos
-
-    console.log(datos)
     
     return (
         <div className='itemdetail-container'>

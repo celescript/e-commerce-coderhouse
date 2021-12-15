@@ -4,7 +4,7 @@ import './index.css';
 
 import App from './App';
 import Home from './pages/Home'
-import Products from './pages/Products'
+import Categories from './pages/Categories'
 import Item from './pages/Item.js'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -17,8 +17,10 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}> 
-            <Route index element={<Home />} />
-            <Route path='/products' element={<Products />} />
+            <Route index element={<Home />}/> 
+            
+            <Route path='/category/:id' element={<Categories />} /> 
+                  
             <Route path='/product/:id' element={<Item />} />
             <Route path='/About' element={<About />} />
             <Route path='/Contact' element={<Contact/>} />
