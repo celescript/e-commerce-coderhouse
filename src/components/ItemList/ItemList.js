@@ -14,7 +14,7 @@ const ItemList = ({datos, loader}) => {
         <div className='item'>
             {datos.map( product => {
                 return (
-                       <Link className='link' to={`/product/${product.id}`}> 
+                       <Link className='link' to={`/product/${product.id}`} key={product.id}> 
                         <Item key={product.id} data={product} />
                         </Link>
                     

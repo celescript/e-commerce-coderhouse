@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 
 import App from './App';
 import Home from './pages/Home'
@@ -19,8 +18,7 @@ ReactDOM.render(
         <Route path='/' element={<App />}> 
             <Route index element={<Home />}/> 
             
-            <Route path='/category/:id' element={<Categories />} /> 
-                  
+            <Route path='/category/:id' element={<Categories />} />      
             <Route path='/product/:id' element={<Item />} />
             <Route path='/About' element={<About />} />
             <Route path='/Contact' element={<Contact/>} />

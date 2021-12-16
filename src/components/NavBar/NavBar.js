@@ -31,8 +31,7 @@ export default function NavBar() {
           <ButtonGroup aria-label="text button group">
             <li>
               <NavLink className='link' to='/'
-              end={true}
-              activeClassName='active'>
+              end={true}>
                 <Button variant='contained' color='secondary'>Home</Button>
               </NavLink>
             </li>

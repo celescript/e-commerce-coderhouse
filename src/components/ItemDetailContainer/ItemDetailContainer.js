@@ -23,7 +23,7 @@ const ItemDetailContainer = ({params}) => {
         .finally(() => {
             setLoading(false)
         })
-    }, [])
+    }, [params.id])
     
 
     return (

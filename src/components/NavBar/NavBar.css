@@ -43,9 +43,6 @@
     }
   }
 
-  .active > *{
-    color:brown;
-  }
   
   nav ul {
     display: flex;
