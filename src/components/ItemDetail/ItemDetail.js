@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { useState} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 
 import './ItemDetail.css'
@@ -7,7 +8,20 @@ import './ItemDetail.css'
 const ItemDetail = ({datos}) => {
 
     const {title, description, price, image} = datos
+    const [cartData, setCartData] = useState({
+        title: title,
+        image: image,
+        price: price,
+        quantity: 0
+    })
     
+    const onAdd = (item) => {
+        setCartData(cartData.quantity = item)
+        
+    }
+
+    
+
     return (
         <div className='itemdetail-container'>
             <div className='img-container'>
@@ -20,7 +34,7 @@ const ItemDetail = ({datos}) => {
 
                 <h2 className='h2-detail'>${price}</h2>
                 
-                <ItemCount stock={price} />                
+                <ItemCount stock={price} onAdd={onAdd} />                
             </div>
         </div>
     )

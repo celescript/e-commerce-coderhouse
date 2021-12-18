@@ -3,11 +3,13 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from "react";
 import './ItemCount.css'
+import {Link} from 'react-router-dom'
 
-export default function ItemCount({stock}) {
+export default function ItemCount({stock, onAdd}) {
     
     const [item, setItemCount] = useState(0)
     const [stockNow, updateStock] = useState(Math.round(stock*3))
+
 
     const sumaItem = () => {
         item <= stock && setItemCount(item + 1) 
@@ -33,7 +35,9 @@ export default function ItemCount({stock}) {
                             
         
                 </div>
-                <Button color="secondary" className='cart-button' onClick={handleClick} disabled={item === 0 || stockNow <= 0} variant="contained"> ADD TO CART </Button>
+                 <Button color="secondary" className='cart-button' onClick={handleClick} disabled={item === 0 || stockNow <= 0} variant="contained"> ADD TO CART </Button> 
+
+                 <Link className="link" to='/cart'> <Button color="primary" variant='outlined' className='cart-button' onClick={() => onAdd(item)}> GO TO CART </Button> </Link>
                 
             </div>
 

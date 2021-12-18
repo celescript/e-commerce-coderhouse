@@ -13,6 +13,8 @@ const ItemDetailContainer = ({params}) => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
 
+
+
     
     
     useEffect(() => {
@@ -25,6 +27,7 @@ const ItemDetailContainer = ({params}) => {
         })
     }, [params.id])
     
+
 
     return (
         

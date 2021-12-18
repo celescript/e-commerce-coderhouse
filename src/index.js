@@ -7,6 +7,7 @@ import Categories from './pages/Categories'
 import Item from './pages/Item.js'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Cart from './pages/Cart'
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
@@ -20,6 +21,7 @@ ReactDOM.render(
             
             <Route path='/category/:id' element={<Categories />} />      
             <Route path='/product/:id' element={<Item />} />
+            <Route path='/cart' element={<Cart />} />
             <Route path='/About' element={<About />} />
             <Route path='/Contact' element={<Contact/>} />
         </Route>
