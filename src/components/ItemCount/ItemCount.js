@@ -4,6 +4,9 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { useState } from "react";
 import './ItemCount.css'
 import {Link} from 'react-router-dom'
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ArrowBackIos from '@mui/icons-material/ArrowBackIos';
+
 
 export default function ItemCount({stock, onAdd}) {
     
@@ -20,7 +23,7 @@ export default function ItemCount({stock, onAdd}) {
     } 
 
     const handleClick = () => {
-        updateStock(stock = stockNow - item)
+        updateStock(stock = stockNow - item) 
     }
    
 
@@ -37,16 +40,23 @@ export default function ItemCount({stock, onAdd}) {
                 </div>
                  <Button color="secondary" className='cart-button' onClick={handleClick} disabled={item === 0 || stockNow <= 0} variant="contained"> ADD TO CART </Button> 
 
-                 <Link className="link" to='/cart'> <Button color="primary" variant='outlined' className='cart-button' onClick={() => onAdd(item)}> GO TO CART </Button> </Link>
+
+                {
+                    stock*3 > stockNow &&  <div className="after-shop">
+                    <Link className="link" to='/category/all'> <Button color="primary" variant='outlined' className='back-button'> <ArrowBackIos /> KEEP SHOPPING </Button> </Link> 
+                    <Link className="link" to='/cart'> <Button color="primary" variant='outlined' className='cart-button' onClick={() => onAdd(item)}> GO TO CART <ShoppingCartIcon /> </Button> </Link> 
+                     </div>
+                }
+                 
                 
             </div>
 
 
-            <span className='stock-products'>
+            <p className='stock-products'>
                 { 
                 (stockNow <= 0) ? <p> OUT OF STOCK</p> : <p>Available stock: {stockNow}</p>
                 }
-            </span>
+            </p>
     
         </>     
     )
