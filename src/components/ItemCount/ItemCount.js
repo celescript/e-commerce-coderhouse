@@ -46,17 +46,22 @@ export default function ItemCount({stock, onAdd}) {
                     }
                 </div>
 
-            </div>
-
-
-            
-
-            {
+                {
                     stock*3 > stockNow &&  <div className="after-shop">
                     <Link className="link" to='/category/all'> <Button color="primary" variant='outlined' className='back-button'> <ArrowBackIos /> KEEP SHOPPING </Button> </Link> 
                     <Link className="link" to='/cart'> <Button color="primary" variant='outlined' className='cart-button' onClick={() => onAdd(item)}> GO TO CART <ShoppingCartIcon /> </Button> </Link> 
                      </div>
                 }
+
+
+                
+
+            </div>
+
+
+            
+
+            
     
         </>     
     )
