@@ -52,11 +52,11 @@ export default function ItemCount({stock, onAdd}) {
             </div>
 
 
-            <p className='stock-products'>
+            <div className='stock-products'>
                 { 
                 (stockNow <= 0) ? <p> OUT OF STOCK</p> : <p>Available stock: {stockNow}</p>
                 }
-            </p>
+            </div>
     
         </>     
     )
