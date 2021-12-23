@@ -7,9 +7,11 @@ import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 
-import { Cart3 } from 'react-bootstrap-icons';
+
 
 import {Link, NavLink} from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget';
+
 
 
 
@@ -55,7 +57,7 @@ export default function NavBar() {
           </ButtonGroup>
         </ul>
         
-        <Cart3 className='cart-icon' size={15} />
+        <CartWidget />
           
       </nav>
     </AppBar>

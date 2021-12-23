@@ -36,7 +36,7 @@ h1, h2{
     font-weight: 400;
 }
 
-h2{
+.item-name > h2{
     color: #5C1779;
     font-size: 1.2rem;
 }

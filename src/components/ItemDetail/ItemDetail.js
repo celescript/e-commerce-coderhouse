@@ -1,31 +1,43 @@
 
 import React from 'react'
-import { useState} from 'react'
+import { useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import CartContext from '../../contexts/CartContext/CartContext'
+
 
 import './ItemDetail.css'
 
+
 const ItemDetail = ({datos}) => {
+    const {addProduct} = useContext(CartContext)
 
     const {title, description, price, image} = datos
+
     const [cartData, setCartData] = useState({
         title: title,
         image: image,
         price: price,
-        quantity: 0
+        quantity: 0    
     })
     
     const onAdd = (item) => {
-        setCartData(cartData.quantity = item)
         
+        setCartData(cartData.quantity = item)
+        setCartData(cartData)
+        addProduct(cartData)
     }
+    
+
+    
+    
+
 
     
 
     return (
         <div className='itemdetail-container'>
             <div className='img-container'>
-                <img alt={description} src={image} />
+                <img className='itemdetail-img' alt={description} src={image} />
             </div>
 
             <div className='text-container'>

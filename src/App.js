@@ -2,6 +2,7 @@
 import NavBar from './components/NavBar/NavBar.js'
 
 import {Outlet } from 'react-router-dom'
+import {CartProvider} from './contexts/CartContext/CartContext.js';
 
 
 
@@ -10,11 +11,10 @@ function App() {
   return (
   
       <div className='App'>
-        <NavBar/>
-        
-         
+        <CartProvider>
+          <NavBar/>
           <Outlet/>
-        
+        </CartProvider>
         
       </div>
 

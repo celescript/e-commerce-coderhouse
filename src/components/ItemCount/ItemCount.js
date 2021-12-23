@@ -24,6 +24,7 @@ export default function ItemCount({stock, onAdd}) {
 
     const handleClick = () => {
         updateStock(stock = stockNow - item) 
+        onAdd(item)
     }
    
 
@@ -38,7 +39,12 @@ export default function ItemCount({stock, onAdd}) {
                             
         
                 </div>
-                 <Button color="secondary" className='cart-button' onClick={handleClick} disabled={item === 0 || stockNow <= 0} variant="contained"> ADD TO CART </Button> 
+                {
+                    stock*3 > stockNow ?  <div className="after-shop">
+                    <Link className="link" to='/category/all'> <Button color="secondary" variant='outlined' className='back-button'> <ArrowBackIos /> KEEP SHOPPING </Button> </Link> 
+                    <Link className="link" to='/cart'> <Button color="primary" variant='outlined' className='cart-button'> GO TO CART <ShoppingCartIcon /> </Button> </Link> 
+                     </div> : <Button color="secondary" className='cart-button' onClick={handleClick} disabled={item === 0 || stockNow <= 0} variant="contained"> ADD TO CART </Button> 
+                }
 
                  <div className='stock-products'>
                     { 
@@ -46,12 +52,7 @@ export default function ItemCount({stock, onAdd}) {
                     }
                 </div>
 
-                {
-                    stock*3 > stockNow &&  <div className="after-shop">
-                    <Link className="link" to='/category/all'> <Button color="primary" variant='outlined' className='back-button'> <ArrowBackIos /> KEEP SHOPPING </Button> </Link> 
-                    <Link className="link" to='/cart'> <Button color="primary" variant='outlined' className='cart-button' onClick={() => onAdd(item)}> GO TO CART <ShoppingCartIcon /> </Button> </Link> 
-                     </div>
-                }
+                
 
 
                 
