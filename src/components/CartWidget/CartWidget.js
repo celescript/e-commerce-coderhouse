@@ -1,13 +1,13 @@
 
 import { useState, useContext } from 'react';
-import { Cart3 } from 'react-bootstrap-icons';
+import { Cart3, XCircle } from 'react-bootstrap-icons';
 import './CartWidget.css'
 import CartContext from '../../contexts/CartContext/CartContext';
 
 const CartWidget = () => {
 
     const [isActive, setIsActive] = useState(false)
-    const {products} = useContext(CartContext)
+    const {products, onRemove} = useContext(CartContext)
     console.log(products)
 
     return (
@@ -18,22 +18,29 @@ const CartWidget = () => {
 
             {isActive && 
             <div className='widget-container'>
-                {
+                {products.length > 0 ? 
                 products.map( product =>{
                     return (
             
                     <div className='widget-item'>
-                        <span className='widget-span'>{product.quantity}</span>        
+
+                        
+                        <span className='widget-span quantity'>{product.quantity}        
+                        </span>
 
                         <img src={product.image} alt={product.description}></img>
                         
+                        
                         <div className='item-text-container'>
-                        <h1 className='cart-text'> {product.title} </h1> 
-                        <h2 className='cart-text'>${product.price}</h2>
+                            <h1 className='cart-text'> {product.title} </h1> 
+                            <h2 className='cart-text'>${product.price}</h2>
                         </div>
-                    </div>)
-                 } )  
 
+                        <span className='widget-span delete'><XCircle size={15} onClick={() => onRemove(product)} /></span>
+                    </div>) 
+                 })
+    
+                 : <h1>YOUR CART IS EMPTY!</h1>
                 }
             </div>} 
 

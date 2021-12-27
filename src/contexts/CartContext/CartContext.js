@@ -7,12 +7,27 @@ const CartProvider = ({children}) => {
 
     const addProduct = (product) => {
         console.log(product)
+
+        const exists = products.find(item => item.title === product.title)
+        
+        exists ? 
+        setProducts(products.map(
+            x => x.title === product.title ? 
+            {...exists, quantity: exists.quantity + product.quantity } 
+            : x)) :
         setProducts(products => [...products, product])
+
+    }
+    
+    const onRemove = (item) => {
+        setProducts(products.filter(x => x.title !== item.title)
+            )
     }
 
     const data ={ 
         products,
-        addProduct
+        addProduct,
+        onRemove
     }
 
     return(
