@@ -24,10 +24,15 @@ const CartProvider = ({children}) => {
             )
     }
 
+    const clear = () => {
+        setProducts([])
+    }
+
     const data ={ 
         products,
         addProduct,
-        onRemove
+        onRemove,
+        clear
     }
 
     return(

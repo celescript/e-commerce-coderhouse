@@ -13,6 +13,21 @@
   
   }
 
+.cart-span{
+    position: absolute;
+    border-radius: 50%;
+    background-color: blueviolet;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 4px;
+    right: 40px;
+    cursor: pointer;
+
+}
+
 .widget-container{
     max-height: 50vh;
     width: 30vw;
@@ -95,3 +110,11 @@
     font-size: 0.9em;
     text-align: right;
 }
+
+.emptycart-text{
+    width: 100%;
+    text-align: center;
+}
+
+
+
