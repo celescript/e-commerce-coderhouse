@@ -4,7 +4,7 @@ import { Cart3, XCircle } from 'react-bootstrap-icons';
 import './CartWidget.css'
 import CartContext from '../../contexts/CartContext/CartContext';
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom'
+
 
 const CartWidget = () => {
 
@@ -46,7 +46,7 @@ const CartWidget = () => {
                  </>
     
                  : 
-                     <h1 className='emptycart-text'>YOUR CART IS EMPTY!</h1>
+                     setIsActive(!isActive)
                     
                     
                 }
