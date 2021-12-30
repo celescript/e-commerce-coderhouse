@@ -22,14 +22,14 @@ const Cart = () => {
             
             {products.map(product => {
                 return(
-                <div className='maincart-product'> 
+                <div id={product.id} className='maincart-product'> 
                     <img src={product.image} alt={product.title}></img>
                     <div className='mainproduct-text'>
                         <h2 className='cartproduct-title'>{product.title}</h2>
-                        <h3>${product.price} </h3>
+                        <h3>${Math.round(product.price)} </h3>
                     </div>
                     <h3 className='total-product'>x{product.quantity}</h3>
-                    <h3 className='total-product'>${product.price * product.quantity}</h3>
+                    <h3 className='total-product'>${Math.round(product.price * product.quantity)}</h3>
                     <span className='remove-product'><Trash size={15} onClick={() => onRemove(product)} /></span>
         
                 </div> 
@@ -42,7 +42,7 @@ const Cart = () => {
             {
                 products.map( product => {
                     return(
-                    <div className='recipt-text'> 
+                    <div id={product.id} className='recipt-text'> 
                         <p>x{product.quantity} {product.title}</p> 
                         <h3>${product.price * product.quantity}</h3>  
                     </div>)

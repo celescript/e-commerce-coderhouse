@@ -10,7 +10,6 @@ const CartWidget = () => {
 
     const [isActive, setIsActive] = useState(false)
     const {products, onRemove, clear} = useContext(CartContext)
-    console.log(products)
 
     return (
 
@@ -25,7 +24,7 @@ const CartWidget = () => {
                 <> {products.map( product =>{
                     return (
             
-                    <div className='widget-item'>
+                    <div id={product.id} className='widget-item'>
 
                         
                         <span className='widget-span quantity'>{product.quantity}        
