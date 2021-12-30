@@ -1,13 +1,21 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const CartContext = createContext()
 
+const productsFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]' )
+
 const CartProvider = ({children}) => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState(productsFromLocalStorage)
+
+    
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(products))
+        
+    }, [products])
 
     const addProduct = (product) => {
-        console.log(product)
-
+        
         const exists = products.find(item => item.title === product.title)
         
         exists ? 
