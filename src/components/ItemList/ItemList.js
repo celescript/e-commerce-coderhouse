@@ -1,5 +1,5 @@
 
-import { CircularProgress} from "@mui/material"
+import { CircularProgress, Zoom} from "@mui/material"
 import Item from '../Item/Item'
 import './ItemList.css'
 
@@ -14,9 +14,10 @@ const ItemList = ({datos, loader}) => {
         <div className='item'>
             {datos.map( product => {
                 return (
-                       <Link className='link' to={`/product/${product.id}`} key={product.id}> 
+                       <Zoom in={!loader} key={product.id}><Link className='link' to={`/product/${product.id}`} > 
                         <Item key={product.id} data={product} />
                         </Link>
+                        </Zoom>
                     
                 )
             }

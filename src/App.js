@@ -3,6 +3,7 @@ import NavBar from './components/NavBar/NavBar.js'
 
 import {Outlet } from 'react-router-dom'
 import {CartProvider} from './contexts/CartContext/CartContext.js';
+import './App.css'
 
 
 

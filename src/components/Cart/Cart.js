@@ -22,7 +22,7 @@ const Cart = () => {
             
             {products.map(product => {
                 return(
-                <div id={product.id} className='maincart-product'> 
+                <div key={product.title} className='maincart-product'> 
                     <img src={product.image} alt={product.title}></img>
                     <div className='mainproduct-text'>
                         <h2 className='cartproduct-title'>{product.title}</h2>
@@ -42,7 +42,7 @@ const Cart = () => {
             {
                 products.map( product => {
                     return(
-                    <div id={product.id} className='recipt-text'> 
+                    <div key={product.title} className='recipt-text'> 
                         <p>x{product.quantity} {product.title}</p> 
                         <h3>${product.price * product.quantity}</h3>  
                     </div>)
@@ -53,7 +53,7 @@ const Cart = () => {
             <hr></hr>
             <div className='total-container'>
                 <h2 className='total-text'>Total: </h2>
-                <h2 className='total-price'> ${total} </h2>
+                <h2 className='total-price'> ${Math.round(total)} </h2>
             </div>
             <Button color='secondary' variant='outlined'>Pay</Button>
 
