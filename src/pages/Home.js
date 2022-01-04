@@ -1,12 +1,13 @@
 import React from 'react'
-import ItemListContainer from '../components/ItemListContainer/ItemListContainer';
+import ImageSlider from '../components/ImageSlider/ImageSlider'
+
 
 
 const Home = () => {
     
     return (
         <div>
-            <ItemListContainer/>  
+            <ImageSlider/>  
         </div>
     )
 }

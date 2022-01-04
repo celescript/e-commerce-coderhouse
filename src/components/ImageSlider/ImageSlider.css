@@ -1,0 +1,11 @@
+
+
+.slide-image, .slide{
+  height: 90vh;
+}
+
+.carousel .thumbs-wrapper{
+  display: none;
+}
+
+
