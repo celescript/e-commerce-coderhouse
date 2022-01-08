@@ -18,6 +18,7 @@ function ImageSlider() {
 
 
     return (
+      
       <Carousel className='main-slide'>
         <Link to='/product/16'>
           <div className='slide'>

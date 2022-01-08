@@ -1,11 +1,16 @@
 
 
 .slide-image, .slide{
-  height: 90vh;
+  height: 92vh;
 }
 
 .carousel .thumbs-wrapper{
   display: none;
 }
+
+.carousel-status{
+  width: 40px;
+}
+
 
 
