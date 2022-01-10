@@ -12,14 +12,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from 'react-router-dom'
 
 
+
 function ImageSlider() {
-  
-	
-
-
     return (
       
-      <Carousel className='main-slide'>
+      <Carousel className='main-slide' showThumbs={false}>
         <Link to='/product/16'>
           <div className='slide'>
             <img className='slide-image' src={img1} alt='#'></img>

@@ -1,9 +1,13 @@
-import ItemList from '../ItemList/ItemList'
-import {urlAPI} from '../../config'
+import './ItemListContainer.css'
 import { useState , useEffect} from 'react'
+
+import ItemList from '../ItemList/ItemList'
+
 import { Button } from '@mui/material'
 import {Link, useParams} from 'react-router-dom'
-import './ItemListContainer.css'
+
+import { collection, getDocs } from 'firebase/firestore' //collection permitira acceder a la coleccion y get docs a obtener los documentos
+import db from '../../firebase/firebaseconfig'
 
 
 const ItemListContainer = () => {
@@ -11,28 +15,31 @@ const ItemListContainer = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     const [activeCategory, setActiveCategory] = useState('all')
-    const categories = ['electronics', 'jewelery', "men's clothing", "women's clothing"]
-    
+    const categories = ['perfume', 'creams', "serums", "face masks"]
     
     
     useEffect(() => {
         setLoading(true)
-        fetch(urlAPI)
-            .then((response) => response.json())
-            .then((res) => setData(res.filter((item) => (params.id === 'all' || activeCategory === 'all') ? res : item.category === activeCategory)))
-            .finally(() => {
-                setLoading(false)
-            })
-    }, [params.id, activeCategory])
+        const getData = async() => {
+            const dataFS = await getDocs(collection( db, 'products'))
+            const productsFS = dataFS.docs.map(doc => {
+                let product = doc.data()
+                product.id = doc.id
+                return product})
+            setData(productsFS.filter((item) => (params.id === 'all' || activeCategory === 'all') ? 
+                    productsFS : 
+                    item.category === activeCategory))
+            setLoading(false)
+            
+        }
+        getData()
+        
+        
+    }, [params.id, activeCategory, data.id])
 
-
-   
- 
     return (
         <>   
                 
-            
-
         <div className='category-container'>
 
             <Link onClick={()=>{setActiveCategory('all')}} className='link' to={`/category/all`}>
@@ -63,7 +70,7 @@ const ItemListContainer = () => {
                 
                 </div>
 
-                <ItemList datos={data} loader={loading} />
+                <ItemList data={data} loader={loading} />
             
         </>
     )   

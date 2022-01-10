@@ -8,10 +8,10 @@ import CartContext from '../../contexts/CartContext/CartContext'
 import './ItemDetail.css'
 
 
-const ItemDetail = ({datos}) => {
+const ItemDetail = ({data}) => {
     const {addProduct} = useContext(CartContext)
 
-    const {title, description, price, image} = datos
+    const {title, description, price, image, stock} = data
 
     const [cartData, setCartData] = useState({
         title: title,
@@ -37,7 +37,7 @@ const ItemDetail = ({datos}) => {
     return (
         <div className='itemdetail-container'>
             <div className='img-container'>
-                <img className='itemdetail-img' alt={description} src={image} />
+                <img className='itemdetail-img' alt={description} src={`../../images/products/${image}`} />
             </div>
 
             <div className='text-container'>
@@ -46,7 +46,7 @@ const ItemDetail = ({datos}) => {
 
                 <h2 className='h2-detail'>${price}</h2>
                 
-                <ItemCount stock={price} onAdd={onAdd} />                
+                <ItemCount stock={stock} onAdd={onAdd} />                
             </div>
         </div>
     )

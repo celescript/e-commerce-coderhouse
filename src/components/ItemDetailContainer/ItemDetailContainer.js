@@ -6,6 +6,8 @@ import './ItemDetailContainer.css'
 
 import { CircularProgress } from '@mui/material'
 
+import {doc, getDoc} from 'firebase/firestore'
+import db from '../../firebase/firebaseconfig'
 
 
 
@@ -13,18 +15,22 @@ const ItemDetailContainer = ({params}) => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
 
-
-
-    
-    
+        
     useEffect(() => {
-        setLoading(true)
-        fetch(`https://fakestoreapi.com/products/${params.id}`)
-        .then((response) => response.json())
-        .then((res) => setData(res))
-        .finally(() => {
-            setLoading(false)
-        })
+       setLoading(true)
+       async function getData(db) {
+           const docRef = doc(db, 'products', params.id)
+           const docSnap = await getDoc(docRef)
+           if( docSnap.exists() ) {
+               let product = docSnap.data()
+               product.id = docSnap.id
+               setData(product)
+               setLoading(false)
+           } else {
+                console.log('error')
+           }
+       }
+       getData(db)
     }, [params.id])
     
 
@@ -32,7 +38,7 @@ const ItemDetailContainer = ({params}) => {
     return (
         
         <>
-        { loading ? <div className='loading'><CircularProgress /></div> : <ItemDetail datos={data}  />}
+        { loading ? <div className='loading'><CircularProgress /></div> : <ItemDetail data={data}  />}
         </>
                 
     )   

@@ -29,7 +29,7 @@ const CartWidget = () => {
                         <span className='widget-span quantity'>{product.quantity}        
                         </span>
 
-                        <img src={product.image} alt={product.description}></img>
+                        <img src={`../../images/products/${product.image}`} alt={product.description}></img>
                         
                         
                         <div className='item-text-container'>

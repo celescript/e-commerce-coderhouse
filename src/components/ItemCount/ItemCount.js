@@ -11,7 +11,7 @@ import ArrowBackIos from '@mui/icons-material/ArrowBackIos';
 export default function ItemCount({stock, onAdd}) {
     
     const [item, setItemCount] = useState(0)
-    const [stockNow, updateStock] = useState(Math.round(stock*3))
+    const [stockNow, updateStock] = useState(stock)
 
 
     const sumaItem = () => {
@@ -40,7 +40,7 @@ export default function ItemCount({stock, onAdd}) {
         
                 </div>
                 {
-                    stock*3 > stockNow ?  
+                    stock > stockNow ?  
                     <div className="after-shop">
                         <Link className="link" to='/category/all'> 
                             <Button color="secondary" variant='outlined' className='back-button'> 
