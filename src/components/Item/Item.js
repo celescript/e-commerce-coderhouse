@@ -9,7 +9,7 @@ const Item = ({data}) => {
     return(
     <div className= 'item-container'>
             <div className='item-img'>
-                <img width='249px' alt={description} src={`../../images/products/${image}`} />
+                <img alt={description} src={`../../images/products/${image}`} />
             </div>
 
             

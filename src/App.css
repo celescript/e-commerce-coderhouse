@@ -11,3 +11,8 @@ body::-webkit-scrollbar {
     outline: 1px solid rgb(255, 255, 255);
   }
 
+
+p{
+  font-family: var(--primary-font)
+}
+

@@ -1,3 +1,10 @@
+:root{
+    --primary-color: lightGreen[500];
+    --secondary-color: purple[400];
+  
+    --primary-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
 .cart-icon{
     cursor: pointer;
      background-color: black; 
@@ -74,7 +81,7 @@
 }
 
 .widget-item > img{
-    height: 6rem;
+    height: 100%;
     margin-right: 0.5rem;
     
 }
@@ -92,7 +99,7 @@
 }
 
 .quantity{
-    background: #7B1FA2;
+    background: #AB47BC;
     margin-right: 0.2rem;
     cursor:default;
 }

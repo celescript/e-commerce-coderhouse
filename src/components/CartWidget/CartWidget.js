@@ -1,8 +1,12 @@
 
 import { useState, useContext } from 'react';
-import { Cart3, XCircle } from 'react-bootstrap-icons';
 import './CartWidget.css'
+
+import { Cart3, XCircle } from 'react-bootstrap-icons';
+
+
 import CartContext from '../../contexts/CartContext/CartContext';
+
 import { Button, Fade, Grow } from '@mui/material';
 
 

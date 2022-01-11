@@ -3,7 +3,7 @@
 .item-container{
     width: 250px;
     height: 500px;
-    background: #1976D2;
+    background: #8BC34A;
     overflow: hidden;
     box-shadow: 0 10px 20px #0006;
 }
@@ -14,6 +14,10 @@
     height: 400px;
     overflow: hidden;
     background-color: #FCFDFC;
+}
+
+.item-img img{
+    height: 100%;
 }
 
 .item-container:hover{
