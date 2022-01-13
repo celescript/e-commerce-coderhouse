@@ -8,6 +8,7 @@ import Item from './pages/Item.js'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import CartPage from './pages/CartPage'
+import CheckoutPage from './pages/CheckoutPage'
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
@@ -18,12 +19,12 @@ ReactDOM.render(
       <Routes>
         <Route path='/' element={<App />}> 
             <Route index element={<Home />}/> 
-            
             <Route path='/category/:id' element={<Categories />} />      
             <Route path='/product/:id' element={<Item />} />
             <Route path='/cart' element={<CartPage />} />
-            <Route path='/About' element={<About />} />
-            <Route path='/Contact' element={<Contact/>} />
+            <Route path='/cart/checkout' element={<CheckoutPage />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact/>} />
         </Route>
 
       </Routes>

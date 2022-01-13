@@ -16,7 +16,7 @@ const Item = ({data}) => {
             <div className='item-name'>
                     <h1> {title}</h1>
 
-                    <h2>${price}</h2>
+                    <h2>${Number(price).toFixed(2)}</h2>
             </div>
 
     </div>)

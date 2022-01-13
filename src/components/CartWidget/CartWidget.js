@@ -38,7 +38,7 @@ const CartWidget = () => {
                         
                         <div className='item-text-container'>
                             <h1 className='cart-text'> {product.title} </h1> 
-                            <h2 className='cart-text'>${product.price}</h2>
+                            <h2 className='cart-text'>${Number(product.price).toFixed(2)}</h2>
                         </div>
 
                         <span  className='widget-span delete'><XCircle size={15} onClick={() => onRemove(product)} /></span>

@@ -45,12 +45,12 @@ export default function NavBar() {
             </li>
 
             <li>
-              <NavLink className='link' to="/Contact">
+              <NavLink className='link' to="/contact">
                 <Button variant='contained' color='secondary'>Contact</Button>
               </NavLink>
             </li>
             <li>
-              <NavLink className='link' to="/About">
+              <NavLink className='link' to="/about">
                 <Button  variant='contained' color='secondary'>About</Button>
               </NavLink>
             </li>

@@ -36,12 +36,7 @@ const CartProvider = ({children}) => {
         setProducts([])
     }
 
-    // const totalArray = (products) => {
-    //     products.map(product => 
-    //         setTotalProducts(totalProducts => [...totalProducts, product.quantity * product.price]) )
-
-    //     return (totalProducts.reduce(function(acc, curr){ acc + curr}))
-    // }
+  
 
     const total = products.reduce(function (acc, curr) {
         return acc + curr.quantity * curr.price;

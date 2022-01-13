@@ -44,7 +44,7 @@ const ItemDetail = ({data}) => {
                 <h1 className='h1-detail'>{title}</h1>
                 <p className='p-detail'>{description}</p>
 
-                <h2 className='h2-detail'>${price}</h2>
+                <h2 className='h2-detail'>${Number(price).toFixed(2)}</h2>
                 
                 <ItemCount stock={stock} onAdd={onAdd} />                
             </div>
