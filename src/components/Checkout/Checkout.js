@@ -3,7 +3,7 @@ import './Checkout.css'
 
 import Recipt from '../Recipt/Recipt'
 
-import { OutlinedInput, Button, InputLabel } from '@mui/material'
+import { OutlinedInput, Button, InputLabel, Alert } from '@mui/material'
 
 import db from '../../firebase/firebaseconfig'
 import { collection, addDoc } from 'firebase/firestore';
@@ -19,6 +19,7 @@ const Checkout = () => {
         email: ''
     }])
     const [date, setDate] = useState('')
+    const [orderId, setOrderId] = useState(null)
 
     const {products, total} = useContext(CartContext)
 
@@ -41,7 +42,8 @@ const Checkout = () => {
     const pushFirebase = async(neworder) => {
         const firebaseOrder = collection( db, 'orders')
         const order = await addDoc(firebaseOrder, neworder)
-        console.log(order)
+        setOrderId(order.id)
+        console.log(order.id)
    }
 
     return (
@@ -49,7 +51,9 @@ const Checkout = () => {
             <h1>Checkout</h1>   
             <hr></hr>
         <div className='big-container'>
-        <form className='form-container'>
+        {orderId ?  <div className='form-container'><Alert  variant="outlined" severity="success">
+        Order number #{orderId}  : Your order has been sent. 
+      </Alert></div> : <form className='form-container'>
             <h2 className='checkoutf-title'>Your information</h2>
 
                 <InputLabel htmlFor="component-outlined">Name</InputLabel>
@@ -80,7 +84,7 @@ const Checkout = () => {
             <Button onClick={sendOrder} variant="contained" >
              Send order
             </Button>
-        </form>
+        </form> }
 
         <div className='recipt-container'>
             <Recipt/>
