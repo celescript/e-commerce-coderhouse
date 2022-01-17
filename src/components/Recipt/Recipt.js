@@ -16,7 +16,7 @@ const Recipt = () => {
                 products.map( product => {
                     return(
                     <div key={product.title} className='recipt-text'> 
-                        <p>x{product.quantity} {product.title}</p> 
+                        <h2>x{product.quantity} {product.title}</h2> 
                         <h3>${Number(product.price * product.quantity).toFixed(2)}</h3>  
                     </div>)
                 }

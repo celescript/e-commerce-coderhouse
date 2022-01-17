@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Categories from './pages/Categories'
 import Item from './pages/Item.js'
 import About from './pages/About'
-import Contact from './pages/Contact'
+import Stores from './pages/Stores'
 import CartPage from './pages/CartPage'
 import CheckoutPage from './pages/CheckoutPage'
 
@@ -24,7 +24,7 @@ ReactDOM.render(
             <Route path='/cart' element={<CartPage />} />
             <Route path='/cart/checkout' element={<CheckoutPage />} />
             <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact/>} />
+            <Route path='/stores' element={<Stores/>} />
         </Route>
 
       </Routes>

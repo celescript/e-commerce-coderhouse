@@ -1,16 +1,13 @@
 
 import './NavBar.css'
 
-import logo from '../../assets/shuriken.svg'
-
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 
-
-
 import {Link, NavLink} from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget';
+
 
 
 
@@ -21,11 +18,7 @@ export default function NavBar() {
       <nav>
       <Link className='link' to='/'>
           <div className="container-logo">
-                <h1>
-                  TEND</h1>
-                  <img src={logo} alt="tendo shuriken logo" />
-            
-            
+             <h1>odele.</h1>
           </div>
         </Link>
         
@@ -45,8 +38,8 @@ export default function NavBar() {
             </li>
 
             <li>
-              <NavLink className='link' to="/contact">
-                <Button variant='contained' color='secondary'>Contact</Button>
+              <NavLink className='link' to="/stores">
+                <Button variant='contained' color='secondary'>Stores</Button>
               </NavLink>
             </li>
             <li>
@@ -57,7 +50,9 @@ export default function NavBar() {
           </ButtonGroup>
         </ul>
         
-        <CartWidget />
+        <Link className='link' to="/cart">
+          <CartWidget/>
+        </Link>
           
       </nav>
     </AppBar>

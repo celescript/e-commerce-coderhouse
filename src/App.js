@@ -4,7 +4,7 @@ import NavBar from './components/NavBar/NavBar.js'
 import {CartProvider} from './contexts/CartContext/CartContext.js';
 import customTheme from './assets/theme'
 
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 
 import {Outlet} from 'react-router-dom'
 
@@ -18,6 +18,7 @@ function App() {
     
       <div className='App'>
         <ThemeProvider theme={customTheme}>
+          <CssBaseline/>
           <CartProvider>
             <NavBar/>
             <Outlet/>

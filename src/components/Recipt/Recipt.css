@@ -7,6 +7,9 @@
     gap: 1.2rem;
 }
 
+.recipt-text > * {
+    font-size: 1rem;
+}
 
 .total-price{
     text-decoration: bold;

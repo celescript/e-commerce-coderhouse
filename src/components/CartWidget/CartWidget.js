@@ -17,17 +17,17 @@ const CartWidget = () => {
 
     return (
 
-        <div className='cart-container'>
+        <div className='cart-container' onMouseEnter={()=> setIsActive(true)} onMouseLeave={()=> setIsActive(false)}>
 
-            <Cart3 className='cart-icon'  size={15} onClick={()=> setIsActive(!isActive)}  />
+            <Cart3 className='cart-icon'  size={15}   />
             <span className='cart-span'>{products.length}</span>
 
             {isActive && 
-            <Fade in={isActive}><div className='widget-container'>
+            <Fade in={isActive} ><div className='widget-container'  >
                 {products.length > 0 ? 
                 <> {products.map( product =>{
                     return (
-                    <Grow in={isActive} key={product.title}><div  className='widget-item'>
+                    <Grow in={isActive} key={product.title}><div className='widget-item' >
 
                         
                         <span className='widget-span quantity'>{product.quantity}        
