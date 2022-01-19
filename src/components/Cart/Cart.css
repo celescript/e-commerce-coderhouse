@@ -52,8 +52,12 @@
     justify-self: center;
 }
 
+.total-product{
+    font-size: 1rem;
+}
+
 .total-product, .remove-product{
-    margin-left: auto
+    margin-left: auto;
 }
 
 .empty-cart{
@@ -61,13 +65,6 @@
     display: flex;
 }
 
-
-
-
-.empty-cart{
-    padding-top: 3rem;
-    display: flex;
-}
 
 .empty-cart img{
     width: 50%;

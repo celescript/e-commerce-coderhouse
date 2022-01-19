@@ -50,9 +50,9 @@ export default function NavBar() {
           </ButtonGroup>
         </ul>
         
-        <Link className='link' to="/cart">
-          <CartWidget/>
-        </Link>
+        
+        <CartWidget/>
+        
           
       </nav>
     </AppBar>

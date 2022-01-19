@@ -7,7 +7,7 @@ import Recipt from '../Recipt/Recipt'
 
 import { Trash } from 'react-bootstrap-icons'
 
-import { Button } from '@mui/material'
+import { Badge, Button } from '@mui/material'
 
 import { Link } from 'react-router-dom'
 
@@ -30,13 +30,17 @@ const Cart = () => {
             {products.map(product => {
                 return(
                 <div key={product.title} className='maincart-product'> 
-                    <img src={`../../images/products/${product.image}`} alt={product.title}></img>
+                    <Badge badgeContent={product.quantity} color="secondary" anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'left',
+                        }}>
+                        <img src={`../../images/products/${product.image}`} alt={product.title}></img>
+                    </Badge>
                     <div className='mainproduct-text'>
                         <h2 className='cartproduct-title'>{product.title}</h2>
                         <h3>${Number(product.price).toFixed(2)} </h3>
                     </div>
-                    <h3 className='total-product'>x{product.quantity}</h3>
-                    <h3 className='total-product'>${Number(product.price * product.quantity).toFixed(2)}</h3>
+                    <h2 className='total-product'>Total: ${Number(product.price * product.quantity).toFixed(2)}</h2>
                     <span className='remove-product'><Trash size={15} onClick={() => onRemove(product)} /></span>
         
                 </div> 

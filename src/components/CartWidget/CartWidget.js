@@ -4,6 +4,7 @@ import './CartWidget.css'
 
 import { Cart3, XCircle } from 'react-bootstrap-icons';
 
+import { Link } from 'react-router-dom';
 
 import CartContext from '../../contexts/CartContext/CartContext';
 
@@ -19,9 +20,10 @@ const CartWidget = () => {
 
         <div className='cart-container' onMouseEnter={()=> setIsActive(true)} onMouseLeave={()=> setIsActive(false)}>
 
-            <Cart3 className='cart-icon'  size={15}   />
-            <span className='cart-span'>{products.length}</span>
-
+                <Link className='link' to="/cart">
+                    <Cart3 className='cart-icon'  size={15}   />
+                    <span className='cart-span'>{products.length}</span>
+                </Link>
             {isActive && 
             <Fade in={isActive} ><div className='widget-container'  >
                 {products.length > 0 ? 

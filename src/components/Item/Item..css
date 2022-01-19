@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
 
 .item-container{
-    width: 250px;
-    height: 500px;
+    width: 200px;
+    height: 400px;
     background: #8BC34A;
     overflow: hidden;
     box-shadow: 0 10px 20px #0006;
+    transition: 0.25s ease;
 }
 
 .item-img{
     display: flex;
     align-items: center;
-    height: 400px;
+    height: 300px;
     overflow: hidden;
     background-color: #FCFDFC;
 }
@@ -21,7 +22,8 @@
 }
 
 .item-container:hover{
-    transform: scale(1.08);
+    box-shadow: 0 6px 18px 0 rgba(#000, 0.1);
+    transform: translateY(-6px);
 }
 
 .item-name{

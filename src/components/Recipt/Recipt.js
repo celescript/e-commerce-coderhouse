@@ -23,7 +23,14 @@ const Recipt = () => {
 
                 )
             }
+           
+            <div className='recipt-text'>
+                <h3 className='shipping-text' >SHIPPING: </h3>
+                <h3 className='shipping-text'> FREE </h3>
+            </div>
+            
             <hr></hr>
+
             <div className='total-container'>
                 <h2 className='total-text'>Total: </h2>
                 <h2 className='total-price'> ${Number(total).toFixed(2)} </h2>
