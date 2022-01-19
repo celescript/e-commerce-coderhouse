@@ -1,6 +1,6 @@
 import React from 'react'
 import './Cart.css'
-import CartImage from '../../assets/shopping.png'
+import CartImage from '../../assets/shopping.svg'
 import CartContext from '../../contexts/CartContext/CartContext'
 import { useContext } from 'react'
 import Recipt from '../Recipt/Recipt'

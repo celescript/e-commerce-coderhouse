@@ -13,3 +13,10 @@
     width: 60%;
     gap: 1rem;
 }
+
+.errors{
+    color: red;
+    font-size: 0.5rem;
+    margin-left: auto;
+    margin-top: -1rem;
+}

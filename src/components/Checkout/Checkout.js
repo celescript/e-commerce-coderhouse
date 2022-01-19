@@ -12,24 +12,86 @@ import CartContext from '../../contexts/CartContext/CartContext'
 import { useContext } from 'react'
 
 
+
+
 const Checkout = () => {
-    const [form, setForm] = useState([{
+    const initialValues = {
         name: '',
         phone: '',
-        email: ''
-    }])
+        email: '',
+        email2: ''
+    }
+    const [form, setForm] = useState(initialValues)
     const [date, setDate] = useState('')
-    const [orderId, setOrderId] = useState(null)
-
+    const [orderId, setOrderId] = useState(null) 
+    const [errors, setErrors] = useState({})
     const {products, total} = useContext(CartContext)
 
     const handleChange = (e) => {
         const {name, value} = e.target
-        setForm({...form, [name]: value})
-        setDate(new Date().toLocaleDateString())
+        const newForm = {...form, [name]: value}
+        setForm(newForm)
+        setErrors(validate(newForm))
+        
     }
 
-    const sendOrder = () => {
+
+
+    const validate = (form) => {
+        const {name, phone, email, email2} = form
+        const errors = {}
+
+        if(!name) {
+            errors.name = 'Please enter your name'
+ 
+        } else if(!/^[a-zA-Z\s]*$/.test(name)){
+            errors.name = 'Please enter a valid name'
+        } else {
+            errors.name = ''
+        }
+
+        if(!phone) {
+            errors.phone = 'Please enter your phone'
+        } else if(!/^[0-9]+$/.test(phone)) {
+            errors.phone = 'Please enter a valid phone'
+        } else {
+            errors.phone = ''
+        }
+
+        if(!email) {
+            errors.email = 'Please enter your email'
+        } else if(!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
+            errors.email = 'Please enter a valid email'
+        } else {
+            errors.email = ''
+        }
+
+        if(!email2) {
+            errors.email2 = 'Please enter your email'
+        } else if(!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email2)) {
+            errors.email2 = 'Please enter a valid email'
+        } else if(email2 !== email){
+            errors.email2 = 'Emails do not match'
+            
+        } else {
+            errors.email2 = ''
+        }
+
+        if(errors.name === '' && errors.phone === '' && errors.email === '' && errors.email2 === '') {
+            errors.valid = true
+            return errors
+        } else {
+            errors.valid = false
+            return errors
+        }
+    }
+
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setDate(new Date().toLocaleDateString())
+    
      let neworder = {}
      neworder.buyer = form
      neworder.products = products
@@ -39,11 +101,11 @@ const Checkout = () => {
         pushFirebase(neworder)
     }
 
+
     const pushFirebase = async(neworder) => {
         const firebaseOrder = collection( db, 'orders')
         const order = await addDoc(firebaseOrder, neworder)
         setOrderId(order.id)
-        console.log(order.id)
    }
 
     return (
@@ -51,40 +113,68 @@ const Checkout = () => {
             <h1>Checkout</h1>   
             <hr></hr>
         <div className='big-container'>
-        {orderId ?  <div className='form-container'><Alert  variant="outlined" severity="success">
-        Order number #{orderId}  : Your order has been sent. 
-      </Alert></div> : <form className='form-container'>
-            <h2 className='checkoutf-title'>Your information</h2>
+        {orderId ?  
+            <div className='form-container'>
+                <Alert  variant="outlined" severity="success">
+                    Order number #{orderId}  : Your order has been sent. 
+                </Alert>
+            </div> : 
+        <form className='form-container' onSubmit={handleSubmit}>
+                <h2 className='checkoutf-title'>Your information</h2>
 
-                <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                <OutlinedInput
-                value={form.name}
-                onChange={handleChange}
-                name='name'
-                label="Name"
-                />
-            
-                <InputLabel htmlFor="component-outlined">Phone</InputLabel>
-                <OutlinedInput
-                value={form.phone}
-                onChange={handleChange}
-                name='phone'
-                label="Phone"
-                />
-            
-            
-                <InputLabel htmlFor="component-outlined">Email</InputLabel>
-                <OutlinedInput
-                value={form.email}
-                onChange={handleChange}
-                name='email'
-                label="Email"
-                />
-            
-            <Button onClick={sendOrder} variant="contained" >
-             Send order
-            </Button>
-        </form> }
+                    <InputLabel htmlFor="component-outlined">Full Name</InputLabel>
+                    <OutlinedInput
+                    value={form.name}
+                    onChange={handleChange}
+                    name='name'
+                    type='text'
+                    required
+                    error={errors.name !== '' && form.name !== ''}
+                    variant="standard"
+                    helperText={errors.name}
+                    />
+                    <strong className='errors'>{errors.name}</strong>
+                    
+                    <InputLabel htmlFor="component-outlined">Phone</InputLabel>
+                    <OutlinedInput
+                    value={form.phone}
+                    onChange={handleChange}
+                    error={errors.phone !== '' && form.phone !== ''}
+                    name='phone'
+                    type='tel'
+                    required
+                    />
+                    <strong className='errors'>{errors.phone}</strong>
+                    
+
+                    <InputLabel htmlFor="component-outlined">Email</InputLabel>
+                    <OutlinedInput
+                    value={form.email}
+                    onChange={handleChange}
+                    error={errors.email !== '' && form.email !== ''}
+                    name='email'
+                    type='email'
+                    required
+                    />
+                    <strong className='errors'>{errors.email}</strong>
+                    
+
+                    <InputLabel htmlFor="component-outlined">Confirm Email</InputLabel>
+                    <OutlinedInput
+                    value={form.email2}
+                    onChange={handleChange}
+                    error={errors.email2 !== '' && form.email2 !== ''}
+                    name='email2'
+                    type='email'
+                    required
+                    />
+                    <strong className='errors'>{errors.email2}</strong>
+                    
+                
+                <Button  type='submit'  variant="contained" disabled={!errors.valid} >
+                Send order
+                </Button>
+            </form> }
 
         <div className='recipt-container'>
             <Recipt/>
@@ -93,6 +183,6 @@ const Checkout = () => {
         
         </div>
     )
-}
+    }
 
 export default Checkout
