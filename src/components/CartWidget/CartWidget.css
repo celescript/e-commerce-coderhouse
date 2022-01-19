@@ -13,19 +13,32 @@
     outline: 1px solid rgb(255, 255, 255);
   }
 
+
+  @media only screen and (min-width: 200px) and (max-width: 767px){
+    div.widget-container{
+        display: none;
+      }
+
+    span.cart-span {
+        position: absolute;
+        right: 15px;
+    }
+  }
+
 .cart-icon{
     cursor: pointer;
     color: #000000;
     width: 4em;
     height: 4em;
     padding: 1.1em;
-    margin-right: 1.5rem;
+    
   }
   .cart-icon:hover{
     border-left: 1px solid black;
     border-right: 1px solid black;
   
   }
+
 
 .cart-span{
     position: absolute;
@@ -37,10 +50,12 @@
     font-size: 0.7rem;
     position: absolute;
     top: 4px;
-    right: 50px;
+    right: 30px;
     cursor: pointer
 
 }
+
+
 
 .widget-container{
     max-height: 50vh;
@@ -62,7 +77,6 @@
 
     border: grey solid 1px;
 
-    
     
 }
 
