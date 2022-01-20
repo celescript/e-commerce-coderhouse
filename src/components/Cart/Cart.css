@@ -1,3 +1,41 @@
+@media only screen and (min-width: 200px) and (max-width: 767px){
+    div.maincart-container{
+        width: 100%;
+        padding-top: 1rem;
+        align-items: center;
+    }
+
+    .maincart-container hr{
+        width: 100%;
+    }
+    .big-container{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    div.maincart-products{
+        width: 95%;
+    }
+
+    div.maincart-product{
+        display: grid;
+        grid-template-columns: 30% 40% 20% 10%;
+    }
+
+    div.recipt-container{
+        width: 100%;
+    }
+
+    div.empty-cart {
+        flex-direction: column;
+        
+    }
+
+    div.empty-cart img, div.emptycart-text{
+        width: 100%;
+    }
+}
+
 .maincart-container{
     width: 80%;
     margin: 0 auto;
