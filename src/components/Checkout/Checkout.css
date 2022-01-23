@@ -15,11 +15,16 @@
 
     form.form-container, div.form-container{
         width: 100%;
+        
     }
+
+    
 
     div.recipt-container{
         width: 100%;
     }
+
+    
 
 }
 
@@ -37,6 +42,10 @@
     padding: 1rem;
     width: 60%;
     gap: 1rem;
+}
+div.form-container{
+    display: flex;
+    align-items: center;
 }
 
 .errors{

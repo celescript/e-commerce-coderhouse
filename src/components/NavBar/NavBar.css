@@ -74,7 +74,7 @@ a:-webkit-any-link{
   }
 
   .menu-container{
-    height: 80vh;
+    height: 500px;
     position: absolute;
     top: 3.99rem;
     left: 0;
@@ -96,6 +96,10 @@ a:-webkit-any-link{
     flex-direction: column;
     align-items: center;
     
+  }
+
+  .menu-container li:hover {
+    border-bottom: 2px solid #ab47bc;
   }
 
   .menu-container h3 {

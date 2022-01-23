@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './Checkout.css'
 
 import Recipt from '../Recipt/Recipt'
+
+import checkpic from '../../assets/checkout.svg'
 
 import { OutlinedInput, Button, InputLabel, Alert } from '@mui/material'
 
@@ -9,7 +11,8 @@ import db from '../../firebase/firebaseconfig'
 import { collection, addDoc } from 'firebase/firestore';
 
 import CartContext from '../../contexts/CartContext/CartContext'
-import { useContext } from 'react'
+
+import { Link } from 'react-router-dom'
 
 
 
@@ -25,7 +28,7 @@ const Checkout = () => {
     const [date, setDate] = useState('')
     const [orderId, setOrderId] = useState(null) 
     const [errors, setErrors] = useState({})
-    const {products, total} = useContext(CartContext)
+    const {products, total, clear} = useContext(CartContext)
 
     const handleChange = (e) => {
         const {name, value} = e.target
@@ -106,6 +109,7 @@ const Checkout = () => {
         const firebaseOrder = collection( db, 'orders')
         const order = await addDoc(firebaseOrder, neworder)
         setOrderId(order.id)
+        
    }
 
     return (
@@ -115,9 +119,11 @@ const Checkout = () => {
         <div className='big-container'>
         {orderId ?  
             <div className='form-container'>
+                <img src={checkpic} alt='confirmed checkout'></img>
                 <Alert  variant="outlined" severity="success">
                     Order number #{orderId}  : Your order has been sent. 
                 </Alert>
+                <Link className='link' to='/' end={true}><Button onClick={() => clear()} variant='outlined'>Go back to home</Button></Link>
             </div> : 
         <form className='form-container' onSubmit={handleSubmit}>
                 <h2 className='checkoutf-title'>Your information</h2>
