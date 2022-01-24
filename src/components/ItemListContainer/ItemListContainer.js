@@ -38,7 +38,7 @@ const ItemListContainer = () => {
     }, [params.id, activeCategory, data.id])
 
     return (
-        <>   
+        <div className='itemlist-container'>   
                 
         <div className='category-container'>
 
@@ -72,7 +72,7 @@ const ItemListContainer = () => {
 
                 <ItemList data={data} loader={loading} />
             
-        </>
+        </div>
     )   
 }
 

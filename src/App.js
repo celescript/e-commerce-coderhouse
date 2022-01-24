@@ -3,6 +3,7 @@ import './App.css'
 import NavBar from './components/NavBar/NavBar.js'
 import {CartProvider} from './contexts/CartContext/CartContext.js';
 import customTheme from './assets/theme'
+import Footer from './components/Footer/Footer';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
@@ -22,6 +23,7 @@ function App() {
           <CartProvider>
             <NavBar/>
             <Outlet/>
+            <Footer />
           </CartProvider>
         </ThemeProvider>
       </div>

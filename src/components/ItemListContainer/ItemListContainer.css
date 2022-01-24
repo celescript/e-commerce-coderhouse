@@ -6,3 +6,7 @@
     padding: 1rem;
 }
 
+.itemlist-container{
+    min-height: 100vh;
+}
+
