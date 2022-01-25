@@ -1,6 +1,9 @@
 import React from 'react';
 import './Footer.css'
 import {Link} from 'react-router-dom'
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Footer = () => {
   return (
@@ -35,14 +38,16 @@ const Footer = () => {
 
     <div className='footersocial-section'>
       <ul>
-        <li>logo</li>
-        <li>logo</li>
-        <li>logo</li>
+        <li><TwitterIcon /></li>
+        <li><InstagramIcon /></li>
+        <li><FacebookIcon/></li>
       </ul>
     </div>
 
     <div className='footer-credits'>
-      <h1>Celes</h1>
+      <Link to='/' className='link'><h1>odele.</h1></Link>
+      <p> by </p>
+      <a rel="noreferrer" className='link' href="https://www.linkedin.com/in/celestefernandez00/?locale=en_US" target="_blank"><h2>Celeste Fernandez</h2></a>
     </div>
 
 

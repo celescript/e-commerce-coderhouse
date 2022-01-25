@@ -2,22 +2,28 @@
   div.itemdetail-container{
       flex-direction: column;
       align-items: center;
+      margin-top: 1.5rem;
+      padding: 0px;
   }  
 
   div.img-container{
-      width: 95%;
       padding: 0;
+    width: 100%;
   }
 
-  .img-container img{
-      width: 90%;
-  }
+ 
+
+  div.img-container img{
+    width: 80%;
+    height: auto;
+}
 
   div.text-container{
-      width: 90%;
+      width: 90vw;
+      height: auto;
       padding: 0;
       gap: 1rem;
-
+ 
   }
 
   .text-container h1{
@@ -39,11 +45,11 @@
 
 .itemdetail-container{
     width: 100%;
-    height: 100vh;
     display: flex;
     padding-top: 2.5rem;
 
 }
+
 .itemdetail-img{
     height: 100%;
 }

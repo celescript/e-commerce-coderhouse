@@ -37,9 +37,9 @@ const ItemDetailContainer = ({params}) => {
 
     return (
         
-        <>
+        <div className='itemdetail-container'>
         { loading ? <div className='loading'><CircularProgress /></div> : <ItemDetail data={data}  />}
-        </>
+        </div>
                 
     )   
    
