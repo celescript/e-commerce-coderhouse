@@ -3,11 +3,12 @@ import { useState , useEffect} from 'react'
 
 import ItemList from '../ItemList/ItemList'
 
-import { Button } from '@mui/material'
+import { Button, ButtonGroup } from '@mui/material'
 import {Link, useParams} from 'react-router-dom'
 
 import { collection, getDocs } from 'firebase/firestore' //collection permitira acceder a la coleccion y get docs a obtener los documentos
 import db from '../../firebase/firebaseconfig'
+
 
 
 const ItemListContainer = () => {
@@ -16,7 +17,20 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(false)
     const [activeCategory, setActiveCategory] = useState('all')
     const categories = ['perfume', 'creams', "serums", "face masks"]
-    
+    const [winWidth, setWinWidth] = useState(window.innerWidth)
+    const buttonStyle = winWidth < 760 ? 'small' : 'large'
+
+    const detectWidth = () => {
+        setWinWidth(window.innerWidth)
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', detectWidth)
+        return() => {
+            window.removeEventListener('resize', detectWidth)
+        }
+    }, [winWidth])
+
     
     useEffect(() => {
         setLoading(true)
@@ -41,10 +55,10 @@ const ItemListContainer = () => {
         <div className='itemlist-container'>   
                 
         <div className='category-container'>
-
+        <ButtonGroup  variant="outlined" size={buttonStyle}>
             <Link onClick={()=>{setActiveCategory('all')}} className='link' to={`/category/all`}>
 
-                <Button color={(params.id === 'all') && 'secondary'} variant='outlined' >all</Button>
+                <Button color={(params.id === 'all') && 'secondary'}>all</Button>
 
             </Link>
 
@@ -59,7 +73,7 @@ const ItemListContainer = () => {
 
                             <Button 
                             color={(activeCategory === category && params.id !== "all") && 'secondary'} 
-                            variant='outlined' >{category}</Button>
+                             >{category}</Button>
 
                         </Link>
                     )
@@ -67,7 +81,7 @@ const ItemListContainer = () => {
                 })
             }
                 
-                
+                </ButtonGroup>   
                 </div>
 
                 <ItemList data={data} loader={loading} />

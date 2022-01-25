@@ -1,3 +1,4 @@
+
 .category-container{
     display: flex;
     align-items: center;
@@ -9,4 +10,3 @@
 .itemlist-container{
     min-height: 100vh;
 }
-
