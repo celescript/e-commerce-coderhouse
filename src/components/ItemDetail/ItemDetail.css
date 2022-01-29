@@ -2,7 +2,7 @@
   div.itemdetail-container{
       flex-direction: column;
       align-items: center;
-      margin-top: 1.5rem;
+      margin-top: 0.5rem;
       padding: 0px;
   }  
 
@@ -14,7 +14,7 @@
  
 
   div.img-container img{
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 
@@ -30,6 +30,8 @@
       margin-top: 1.2rem;
       font-size: 1.8rem;
       align-self: center;
+      text-decoration: underline 3px #AB47BC;
+      text-align: center;
 }
 
     h2.h2-detail{
@@ -46,7 +48,8 @@
 .itemdetail-container{
     width: 100%;
     display: flex;
-    padding-top: 2.5rem;
+    padding-top: 2rem;
+    min-height: 100vh;
 
 }
 
