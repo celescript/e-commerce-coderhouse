@@ -38,6 +38,8 @@
     background-image: url(../../assets/wave.svg);
     background-position: center;
     background-size: cover;
+
+    margin-bottom: 3rem ;
 }
 
 .trending-container h1{
@@ -61,7 +63,22 @@
     overflow: hidden;
     height: 100%;
     position: relative;
+    transition:.2s all; 
 
+}
+
+.productcards-container:hover .productcard{
+    filter:blur(3px);
+  opacity:.5;
+  transform: scale(.98);
+  box-shadow:none;
+}
+
+.productcards-container:hover .productcard:hover{
+    transform:scale(1);
+  filter:blur(0px);
+  opacity:1;
+  box-shadow:0 8px 20px 0px rgba(0,0,0,0.125);
 }
 
 

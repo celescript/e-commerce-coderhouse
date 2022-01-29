@@ -1,4 +1,5 @@
 
+import { InfoCircle } from 'react-bootstrap-icons'
 import './Item..css'
 
 
@@ -17,7 +18,13 @@ const Item = ({data}) => {
                     <h1> {title}</h1>
 
                     <h2>${Number(price).toFixed(2)}</h2>
+                    
             </div>
+
+            <span>
+                <InfoCircle />
+                <p>{description}</p>
+            </span>
 
     </div>)
 }
