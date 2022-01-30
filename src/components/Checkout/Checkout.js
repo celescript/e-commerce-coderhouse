@@ -137,7 +137,6 @@ const Checkout = () => {
                     required
                     error={errors.name !== '' && form.name !== ''}
                     variant="standard"
-                    helperText={errors.name}
                     />
                     <strong className='errors'>{errors.name}</strong>
                     

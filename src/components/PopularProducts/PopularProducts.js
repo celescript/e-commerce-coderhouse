@@ -35,10 +35,14 @@ const PopularProducts = () => {
     {
       dataProducts.map( (product) => {
         return(
-          <Link to={`/product/${product.id}`}>
+          <Link key={product.id} to={`/product/${product.id}`}>
             <div className='productcard'>
               <div className='productcard-img'>
-                <img src={`../../images/products/${product.image}`} alt='#' />
+
+                {
+                  <img src={`../../images/products/${product.image}`} alt='#' />
+                }
+                
               </div>
               <div className='productcard-text'>
                 <h3>{product.title}</h3>

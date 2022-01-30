@@ -58,7 +58,7 @@ const ItemListContainer = () => {
         <ButtonGroup  variant="outlined" size={buttonStyle}>
             <Link onClick={()=>{setActiveCategory('all')}} className='link' to={`/category/all`}>
 
-                <Button color={(params.id === 'all') && 'secondary'}>all</Button>
+                <Button color={(params.id === 'all') ? 'secondary' : 'primary'}>all</Button>
 
             </Link>
 
@@ -72,7 +72,7 @@ const ItemListContainer = () => {
                         key={category}>
 
                             <Button 
-                            color={(activeCategory === category && params.id !== "all") && 'secondary'} 
+                            color={(activeCategory === category && params.id !== "all")? 'secondary' : 'primary'} 
                              >{category}</Button>
 
                         </Link>
