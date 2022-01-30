@@ -45,6 +45,7 @@
 .link, a{
   text-decoration: none;
   -moz-appearance: none;
+  color: beige;
 }
 
 a:-webkit-any-link{

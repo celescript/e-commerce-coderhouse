@@ -29,7 +29,7 @@ const PopularProducts = () => {
     
 
   return (<section className='trending-container'>
-    <h1>Trending now </h1>
+    <h2 className='hometitle'>Trending now </h2>
 
     <div className='productcards-container'>
     {
