@@ -47,7 +47,7 @@ const Checkout = () => {
         if(!name) {
             errors.name = 'Please enter your name'
  
-        } else if(!/^[a-zA-Z\s]*$/.test(name)){
+        } else if(!/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/.test(name)){
             errors.name = 'Please enter a valid name'
         } else {
             errors.name = ''
@@ -109,7 +109,7 @@ const Checkout = () => {
         const firebaseOrder = collection( db, 'orders')
         const order = await addDoc(firebaseOrder, neworder)
         setOrderId(order.id)
-        
+        clear()
    }
 
     return (
@@ -123,7 +123,7 @@ const Checkout = () => {
                 <Alert  variant="outlined" severity="success">
                     Order number #{orderId}  : Your order has been sent. 
                 </Alert>
-                <Link className='link' to='/' end={true}><Button onClick={() => clear()} variant='outlined'>Go back to home</Button></Link>
+                <Link className='link' to='/' end={true}><Button variant='outlined'>Go back to home</Button></Link>
             </div> : 
         <form className='form-container' onSubmit={handleSubmit}>
                 <h2 className='checkoutf-title'>Your information</h2>

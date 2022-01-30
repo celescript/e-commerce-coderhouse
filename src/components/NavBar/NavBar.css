@@ -42,7 +42,7 @@
   }
 
 
-.link{
+.link, a{
   text-decoration: none;
   -moz-appearance: none;
 }
