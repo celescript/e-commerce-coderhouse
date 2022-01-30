@@ -98,7 +98,7 @@ a:-webkit-any-link{
     
   }
 
-  .menu-container li:hover {
+  .menu-container li:focus {
     border-bottom: 2px solid #ab47bc;
   }
 

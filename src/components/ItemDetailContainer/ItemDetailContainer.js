@@ -8,12 +8,14 @@ import { CircularProgress } from '@mui/material'
 
 import {doc, getDoc} from 'firebase/firestore'
 import db from '../../firebase/firebaseconfig'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const ItemDetailContainer = ({params}) => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
+    let navigate = useNavigate();
 
         
     useEffect(() => {
@@ -27,11 +29,12 @@ const ItemDetailContainer = ({params}) => {
                setData(product)
                setLoading(false)
            } else {
-                console.log('error')
+                navigate('*')
+                
            }
        }
        getData(db)
-    }, [params.id])
+    }, [params.id, navigate])
     
 
 

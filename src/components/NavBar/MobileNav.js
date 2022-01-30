@@ -17,24 +17,24 @@ const MobileNav = () => {
                     <ul>
                         <li>
                             <NavLink className='link' to='/'
-                            end={true}>
+                            end={true} onClick={() => setActiveNav(!activeNav)}>
                                 <h3 variant='contained' color='secondary'>Home</h3>
                             </NavLink>
                             </li>
 
                             <li>
-                            <NavLink className='link' to="/category/all">
+                            <NavLink className='link' to="/category/all" onClick={() => setActiveNav(!activeNav)}>
                                 <h3  variant='contained' color='secondary'>Products</h3>
                             </NavLink>
                             </li>
 
                             <li>
-                            <NavLink className='link' to="/stores">
+                            <NavLink className='link' to="/stores" onClick={() => setActiveNav(!activeNav)}>
                                 <h3  variant='contained' color='secondary'>Stores</h3>
                             </NavLink>
                             </li>
                             <li>
-                            <NavLink className='link' to="/about">
+                            <NavLink className='link' to="/about" onClick={() => setActiveNav(!activeNav)}>
                                 <h3   variant='contained' color='secondary'>About</h3>
                             </NavLink>
                         </li>
