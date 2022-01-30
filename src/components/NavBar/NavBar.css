@@ -44,6 +44,7 @@
 
 .link{
   text-decoration: none;
+  -moz-appearance: none;
 }
 
 a:-webkit-any-link{
