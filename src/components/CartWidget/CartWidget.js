@@ -22,7 +22,7 @@ const CartWidget = () => {
 
                 <Link className='link' to="/cart">
                     <Cart3 className='cart-icon'  size={15}   />
-                    <span className='cart-span'>{products.length}</span>
+                    <span className='cart-span link'>{products.length}</span>
                 </Link>
             {isActive && 
             <Fade in={isActive} ><div className='widget-container'  >

@@ -27,12 +27,6 @@ const MobileNav = () => {
                                 <h3  variant='contained' color='secondary'>Products</h3>
                             </NavLink>
                             </li>
-
-                            <li>
-                            <NavLink className='link' to="/stores" onClick={() => setActiveNav(!activeNav)}>
-                                <h3  variant='contained' color='secondary'>Stores</h3>
-                            </NavLink>
-                            </li>
                             <li>
                             <NavLink className='link' to="/about" onClick={() => setActiveNav(!activeNav)}>
                                 <h3   variant='contained' color='secondary'>About</h3>

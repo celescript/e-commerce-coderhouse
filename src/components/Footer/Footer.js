@@ -22,7 +22,6 @@ const Footer = () => {
       <ul>
       <p>QUICK LINKS</p>
         <li><Link className='link' to='/category/all'>Products</Link></li>
-        <li><Link className='link' to='/stores'>Stores</Link></li>
         <li><Link className='link' to='/about'>About</Link></li>
       </ul>
     

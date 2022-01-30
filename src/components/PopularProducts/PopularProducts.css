@@ -31,15 +31,15 @@
     
 }
 
-@media only screen and(min-width: 767px){
-    .productcards-container:hover .productcard{
+@media (min-width: 767px){
+    div.productcards-container:hover div.productcard{
         filter:blur(3px);
       opacity:.5;
       transform: scale(.98);
       box-shadow:none;
     }
     
-    .productcards-container:hover .productcard:hover{
+    div.productcards-container:hover div.productcard:hover{
         transform:scale(1);
       filter:blur(0px);
       opacity:1;

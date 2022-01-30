@@ -21,7 +21,7 @@ const Item = ({data}) => {
                     
             </div>
 
-            <span>
+            <span className='link'>
                 <InfoCircle />
                 <p>{description}</p>
             </span>

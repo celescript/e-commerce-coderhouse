@@ -24,11 +24,6 @@ const DesktopNav = () => {
             </li>
 
             <li>
-              <NavLink className='link' to="/stores">
-                <Button variant='contained' color='secondary'>Stores</Button>
-              </NavLink>
-            </li>
-            <li>
               <NavLink className='link' to="/about">
                 <Button  variant='contained' color='secondary'>About</Button>
               </NavLink>

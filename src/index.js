@@ -6,7 +6,6 @@ import Home from './pages/Home'
 import Categories from './pages/Categories'
 import Item from './pages/Item.js'
 import AboutPage from './pages/AboutPage'
-import Stores from './pages/Stores'
 import CartPage from './pages/CartPage'
 import CheckoutPage from './pages/CheckoutPage'
 import NotFound from './pages/NotFoundPage';
@@ -25,7 +24,6 @@ ReactDOM.render(
             <Route path='/cart' element={<CartPage />} />
             <Route path='/cart/checkout' element={<CheckoutPage />} />
             <Route path='/about' element={<AboutPage />} />
-            <Route path='/stores' element={<Stores/>} />
             <Route path="*" element={<NotFound />} />
         </Route>
 
