@@ -63,7 +63,7 @@ const Checkout = () => {
 
         if(!email) {
             errors.email = 'Please enter your email'
-        } else if(!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
+        } else if(!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
             errors.email = 'Please enter a valid email'
         } else {
             errors.email = ''
@@ -71,7 +71,7 @@ const Checkout = () => {
 
         if(!email2) {
             errors.email2 = 'Please enter your email'
-        } else if(!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email2)) {
+        } else if(!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email2)) {
             errors.email2 = 'Please enter a valid email'
         } else if(email2 !== email){
             errors.email2 = 'Emails do not match'
@@ -117,14 +117,14 @@ const Checkout = () => {
             <h1>Checkout</h1>   
             <hr></hr>
         <div className='big-container'>
-        {orderId ?  
-            <div className='form-container'>
+        {orderId !== null ?  
+            <div className='confirmed-container'>
                 <img src={checkpic} alt='confirmed checkout'></img>
                 <Alert  variant="outlined" severity="success">
                     Order number #{orderId}  : Your order has been sent. 
                 </Alert>
                 <Link className='link' to='/' end={true}><Button variant='outlined'>Go back to home</Button></Link>
-            </div> : 
+            </div> : <>
         <form className='form-container' onSubmit={handleSubmit}>
                 <h2 className='checkoutf-title'>Your information</h2>
 
@@ -179,11 +179,12 @@ const Checkout = () => {
                 <Button  type='submit'  variant="contained" disabled={!errors.valid} >
                 Send order
                 </Button>
-            </form> }
-
-        <div className='recipt-container'>
+            </form>
+            <div className='recipt-container'>
             <Recipt/>
-        </div>
+            </div> 
+            </>}
+        
         </div>
         
         </div>

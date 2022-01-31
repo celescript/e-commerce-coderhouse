@@ -43,7 +43,7 @@ const CartWidget = () => {
                             <h2 className='cart-text'>${Number(product.price).toFixed(2)}</h2>
                         </div>
 
-                        <span  className='widget-span delete'><XCircle size={15} onClick={() => onRemove(product)} /></span>
+                        <span onClick={() => onRemove(product)} className='widget-span delete'><XCircle size={15}  /></span>
                     </div></Grow>) 
                  }) }
                  <Button onClick={() => clear()}> Clear Cart </Button>
