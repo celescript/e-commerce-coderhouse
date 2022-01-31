@@ -15,7 +15,7 @@ const ItemListContainer = () => {
     const params = useParams()
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
-    const [activeCategory, setActiveCategory] = useState('all')
+    const [activeCategory, setActiveCategory] = useState(params.id)
     const categories = ['perfume', 'creams', "serums", "face masks"]
     const [winWidth, setWinWidth] = useState(window.innerWidth)
     const buttonStyle = winWidth < 760 ? 'small' : 'large'
@@ -59,6 +59,7 @@ const ItemListContainer = () => {
             <Link onClick={()=>{setActiveCategory('all')}} className='link' to={`/category/all`}>
 
                 <Button color={(params.id === 'all') ? 'secondary' : 'primary'}>all</Button>
+                
 
             </Link>
 
